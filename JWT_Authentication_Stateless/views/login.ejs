@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .error-message {
+         color: red; /* Color the error message red */
+         font-weight: bold;
+       }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form action="/user/login" method="post">
+      <% if (error) { %>
+      <h3 class="error-message"><%= error %></h3>
+      <!-- Display error message -->
+      <% } %>
+      <label>Email</label>
+      <input type="email" name="email" required />
+      <label>Password</label>
+      <input type="password" name="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>
